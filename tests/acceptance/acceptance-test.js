@@ -16,5 +16,6 @@ module('Acceptance: Acceptance', {
 
 test('Assert that objects in repos directory are correctly registered', function(assert) {
     var controller = lookup('controller:wat');
-    assert.equal(controller.foo(), "foo");
+    assert.equal(controller.callFoo(), "foo");
+    assert.equal(controller.callBar(), "bar");
 });

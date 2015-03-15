@@ -2,8 +2,12 @@ import Ember from "ember";
 
 var WatController = Ember.Controller.extend({
     fooRepo: Ember.inject.repos("foo"),
-    foo: function() {
+    barRepo: Ember.inject.repos("bar"),
+    callFoo: function() {
         return this.get("fooRepo").foo();
+    },
+    callBar: function() {
+        return this.get("barRepo").returnBar();
     }
 });
 

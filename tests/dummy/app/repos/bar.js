@@ -1,7 +1,7 @@
 import Ember from "ember";
 
 var BarRepo = Ember.Object.extend({
-    bar: function() {
+    returnBar: function() {
         return "bar";
     }
 });
