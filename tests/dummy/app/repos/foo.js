@@ -1,9 +1,9 @@
 import Ember from "ember";
 
 var FooRepo = Ember.Object.extend({
-    foo: function() {
+    wat: function() {
         return "foo";
-    }
+    }.property()
 });
 
 export default FooRepo;
