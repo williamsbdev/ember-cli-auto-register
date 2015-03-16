@@ -7,6 +7,8 @@ export function initialize(container, application) {
     application.name = "dummy";
 
     registerWithContainer("repos", application);
+
+    //how you might inject the registered objects in routes/controllers
     Ember.inject.repos = function(name) {
         return container.lookup("repos:" + name);
     };
