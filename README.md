@@ -11,10 +11,9 @@ container
 
 ## Installation
 
-    # install via npm
-    $ npm install ember-cli-auto-register --save-dev
-    # make ember-cli fetch internal dependencies
-    $ ember g ember-cli-auto-register
+You install this ember-addon via npm
+
+    npm install ember-cli-auto-register --save-dev
 
 ## Running Tests
 
