@@ -51,12 +51,6 @@ import FooRepo from "dummy/repos/foo";
 import BarRepo from "dummy/repos/bar";
 ```
 
-As the number of objects grows, so will your initializer. However, with
-ember-cli-auto-register, you will already have the object register in the
-container and ready to go and you will not need to think about registering
-the object, you can use it as soon as you create it after you have done the
-initial setup.
-
 ## Running Tests
 
 To run the test, install dependencies:
