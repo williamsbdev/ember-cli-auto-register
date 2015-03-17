@@ -7,13 +7,49 @@
 
 ember-cli-auto-register allows you to register all the
 objects in a specified directory into the application
-container
+container.
 
 ## Installation
 
 You install this ember-addon via npm
 
     npm install ember-cli-auto-register --save-dev
+
+## API
+
+You can use this by creating an initializer for you application. Let's take
+the example that you have some "repos" that you would like to have
+registered in your application container. Your initializer might look like
+the following:
+
+```javascript
+import registerWithContainer from "ember-cli-auto-register/register";
+
+export function initialize(container, application) {
+    registerWithContainer("repos", application);
+}
+
+export default {
+    name: "repos",
+    initialize: initialize
+};
+```
+
+What does this save you? The single `registerWithContainer("repos",
+application);` line would turn into the following:
+
+```javascript
+application.register("repos:foo", FooRepo);
+application.register("repos:bar", BarRepo);
+```
+
+Additionally, at the top of your file, you would need to import the repos
+with the following:
+
+```javascript
+import FooRepo from "dummy/repos/foo";
+import BarRepo from "dummy/repos/bar";
+```
 
 ## Running Tests
 
