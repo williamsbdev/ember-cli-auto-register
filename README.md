@@ -22,6 +22,7 @@ the example that you have some "repos" that you would like to have
 registered in your application container. Your initializer might look like
 the following:
 
+```javascript
     import Ember from "ember";
     import registerWithContainer from "ember-cli-auto-register/register";
 
@@ -38,18 +39,23 @@ the following:
         name: "repos",
         initialize: initialize
     };
+```
 
 What does this save you? The single `registerWithContainer("repos",
 application);` line would turn into the following:
 
+```javascript
     application.register("repos:foo", FooRepo);
     application.register("repos:bar", BarRepo);
+```
 
 Additionally, at the top of your file, you would need to import the repos
 with the following:
 
+```javascript
     import FooRepo from "dummy/repos/foo";
     import BarRepo from "dummy/repos/bar";
+```
 
 As the number of objects grows, so will your initializer. However, with
 ember-cli-auto-register, you will already have the object register in the
