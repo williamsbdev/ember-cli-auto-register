@@ -23,38 +23,38 @@ registered in your application container. Your initializer might look like
 the following:
 
 ```javascript
-    import Ember from "ember";
-    import registerWithContainer from "ember-cli-auto-register/register";
+import Ember from "ember";
+import registerWithContainer from "ember-cli-auto-register/register";
 
-    export function initialize(container, application) {
-        registerWithContainer("repos", application);
+export function initialize(container, application) {
+    registerWithContainer("repos", application);
 
-        //how you might inject the registered objects in routes/controllers
-        Ember.inject.repos = function(name) {
-            return container.lookup("repos:" + name);
-        };
-    }
-
-    export default {
-        name: "repos",
-        initialize: initialize
+    //how you might inject the registered objects in routes/controllers
+    Ember.inject.repos = function(name) {
+        return container.lookup("repos:" + name);
     };
+}
+
+export default {
+    name: "repos",
+    initialize: initialize
+};
 ```
 
 What does this save you? The single `registerWithContainer("repos",
 application);` line would turn into the following:
 
 ```javascript
-    application.register("repos:foo", FooRepo);
-    application.register("repos:bar", BarRepo);
+application.register("repos:foo", FooRepo);
+application.register("repos:bar", BarRepo);
 ```
 
 Additionally, at the top of your file, you would need to import the repos
 with the following:
 
 ```javascript
-    import FooRepo from "dummy/repos/foo";
-    import BarRepo from "dummy/repos/bar";
+import FooRepo from "dummy/repos/foo";
+import BarRepo from "dummy/repos/bar";
 ```
 
 As the number of objects grows, so will your initializer. However, with
