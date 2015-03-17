@@ -28,11 +28,6 @@ import registerWithContainer from "ember-cli-auto-register/register";
 
 export function initialize(container, application) {
     registerWithContainer("repos", application);
-
-    //how you might inject the registered objects in routes/controllers
-    Ember.inject.repos = function(name) {
-        return container.lookup("repos:" + name);
-    };
 }
 
 export default {
