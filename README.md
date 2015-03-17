@@ -23,7 +23,6 @@ registered in your application container. Your initializer might look like
 the following:
 
 ```javascript
-import Ember from "ember";
 import registerWithContainer from "ember-cli-auto-register/register";
 
 export function initialize(container, application) {
