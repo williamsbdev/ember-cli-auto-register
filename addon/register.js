@@ -3,7 +3,7 @@ import Ember from "ember";
 var registerWithContainer = function(dirName, application) {
     var directoryRegExp = new RegExp("^" + application.name + "/" + dirName);
 
-    Ember.keys(requirejs._eak_seen).filter(function(key) {
+    Ember.keys(requirejs.entries).filter(function(key) {
         return directoryRegExp.test(key);
     }).forEach(function(moduleName) {
         var module = require(moduleName, null, null, true);
