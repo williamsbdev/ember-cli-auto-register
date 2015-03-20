@@ -17,7 +17,7 @@ You install this ember-addon via npm
 
 ## API
 
-You can use this by creating an initializer for you application. Let's take
+You can use this by creating an initializer for your application. Let's take
 the example that you have some "repos" that you would like to have
 registered in your application container. Your initializer might look like
 the following:
@@ -36,19 +36,13 @@ export default {
 ```
 
 What does this save you? The single `registerWithContainer("repos",
-application);` line would turn into the following:
+application);` line does the following for you, cutting down on the boilerplate
+code you have to write in the initializer and would automatically register any
+new objects you create in your repos directory:
 
 ```javascript
 application.register("repos:foo", FooRepo);
 application.register("repos:bar", BarRepo);
-```
-
-Additionally, at the top of your file, you would need to import the repos
-with the following:
-
-```javascript
-import FooRepo from "dummy/repos/foo";
-import BarRepo from "dummy/repos/bar";
 ```
 
 ## Running Tests
