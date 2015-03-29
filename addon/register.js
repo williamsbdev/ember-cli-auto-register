@@ -7,8 +7,16 @@ var registerWithContainer = function(dirName, application) {
         return directoryRegExp.test(key);
     }).forEach(function(moduleName) {
         var module = require(moduleName, null, null, true);
-        if (!module) { throw new Error(moduleName + " must export a single object to be registered with container."); }
         var fileName =  moduleName.match(/[^\/]+\/?$/)[0];
+        var error = new Error(moduleName + " must export a single function to be registered with container.");
+        if (!module) {
+            console.log(dirName + "/" + fileName + ".js did not have a default export.");
+            throw error;
+        }
+        if(!(module["default"] instanceof Function)) {
+            console.log(dirName + "/" + fileName + ".js exported an object instead of a function.");
+            throw error;
+        }
         application.register(dirName + ":" + fileName, module["default"]);
     });
 };
