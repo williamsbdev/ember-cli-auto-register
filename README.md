@@ -60,10 +60,9 @@ or
 
     ember test --server
 
-## Issues/Contributions
+## Issues
 
-Please submit bugs to the [issues](https://github.com/williamsbdev/ember-cli-auto-register/issues).
-PRs are welcome.
+Please submit bugs to the [issues].
 
 ## License
 
@@ -73,3 +72,4 @@ Licensed under the MIT License
 
 [Build Status]: https://travis-ci.org/williamsbdev/ember-cli-auto-register.svg?branch=master
 [NPM Downlaads]: https://img.shields.io/npm/dm/ember-cli-auto-register.svg
+[issues]: https://github.com/williamsbdev/ember-cli-auto-register/issues
