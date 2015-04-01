@@ -21,8 +21,4 @@ test('Assert that objects in repos directory are correctly registered', function
     var barRepo = lookup('repo:bar');
     assert.ok(barRepo);
     assert.equal(barRepo.get("wat"), "bar");
-    var watRepo = lookup('repo:wat');
-    assert.ok(watRepo);
-    assert.equal(watRepo.one(), "one");
-    assert.equal(watRepo.two(), "two");
 });
