@@ -1,6 +1,6 @@
 import Ember from "ember";
 
-var registerWithContainer = function(dirName, application) {
+var registerWithApplication = function(dirName, application) {
     var directoryRegExp = new RegExp("^" + application.name + "/" + dirName);
 
     Ember.keys(requirejs.entries).filter(function(key) {
@@ -8,17 +8,16 @@ var registerWithContainer = function(dirName, application) {
     }).forEach(function(moduleName) {
         var module = require(moduleName, null, null, true);
         var fileName =  moduleName.match(/[^\/]+\/?$/)[0];
-        var error = new Error(moduleName + " must export a single function to be registered with container.");
-        if (!module) {
+        if (!module || !module["default"]) {
             console.log(dirName + "/" + fileName + ".js did not have a default export.");
-            throw error;
+            throw new Error(moduleName + " must export a default to be registered with application.");
         }
-        if(!(module["default"] instanceof Function)) {
-            console.log(dirName + "/" + fileName + ".js exported an object instead of a function.");
-            throw error;
+        if(!(module["default"].create instanceof Function)) {
+            console.log(dirName + "/" + fileName + ".js object did not have a create function.");
+            throw new Error(moduleName + " must export object with create and destroy functions");
         }
         application.register(dirName + ":" + fileName, module["default"]);
     });
 };
 
-export default registerWithContainer;
+export default registerWithApplication;

@@ -45,6 +45,9 @@ application.register("repos:foo", FooRepo);
 application.register("repos:bar", BarRepo);
 ```
 
+At this time, the auto-register only supports functions exported as default
+that can be instantiated.
+
 ## Running Tests
 
 To run the test, install dependencies:
