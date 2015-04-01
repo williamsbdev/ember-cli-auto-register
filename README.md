@@ -45,8 +45,7 @@ application.register("repos:foo", FooRepo);
 application.register("repos:bar", BarRepo);
 ```
 
-At this time, the auto-register only supports functions exported as default
-that can be instantiated.
+At this time, the auto-register only supports Ember Objects exported as default.
 
 ## Running Tests
 
