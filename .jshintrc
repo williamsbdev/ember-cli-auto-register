@@ -2,9 +2,7 @@
   "predef": [
     "document",
     "window",
-    "-Promise",
-    "require",
-    "requirejs"
+    "-Promise"
   ],
   "browser": true,
   "boss": true,
