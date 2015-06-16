@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { module, test } from 'qunit';
 import startApp from 'dummy/tests/helpers/start-app';
-import lookup from 'ember-cli-test-helpers/tests/helpers/lookup';
+import lookup from 'dummy/tests/helpers/lookup';
 
 var application;
 
