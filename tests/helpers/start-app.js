@@ -3,13 +3,6 @@ import Application from '../../app';
 import Router from '../../router';
 import config from '../../config/environment';
 
-Application.initializer({
-    name: 'extractContainer',
-    initialize: function(c) {
-        window.__container__ = c;
-    }
-});
-
 export default function startApp(attrs) {
   var application;
 
