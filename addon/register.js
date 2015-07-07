@@ -4,7 +4,7 @@ var registerWithApplication = function(dirName, application) {
     var directoryRegExp = new RegExp("^" + application.name + "/" + dirName);
     var require = window.require;
 
-    Ember.keys(require.entries).filter(function(key) {
+    Object.keys(require.entries).filter(function(key) {
         return directoryRegExp.test(key);
     }).forEach(function(moduleName) {
         var module = require(moduleName, null, null, true);
