@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-auto-register",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ember-addon to auto register a directory of objects into the ember container",
   "directories": {
     "doc": "doc",
