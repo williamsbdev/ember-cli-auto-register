@@ -1,7 +1,8 @@
-import Ember from "ember";
+import { computed } from '@ember/object';
+import EmberObject from '@ember/object';
 
-var FooRepo = Ember.Object.extend({
-    wat: Ember.computed(function() {
+var FooRepo = EmberObject.extend({
+    wat: computed(function() {
         return "foo";
     })
 });
